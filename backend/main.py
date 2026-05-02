@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoTokenizer, BertModel
 import torch
 import warnings
 
@@ -20,7 +20,7 @@ app.add_middleware(
 MODEL_NAME = "prajjwal1/bert-mini"
 print(f"Loading model {MODEL_NAME}...")
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
-model = AutoModel.from_pretrained(MODEL_NAME, output_attentions=True)
+model = BertModel.from_pretrained(MODEL_NAME, output_attentions=True)
 model.eval()
 print("Model loaded successfully.")
 

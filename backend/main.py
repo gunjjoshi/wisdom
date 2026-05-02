@@ -19,7 +19,7 @@ app.add_middleware(
 
 MODEL_NAME = "prajjwal1/bert-mini"
 print(f"Loading model {MODEL_NAME}...")
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 model = AutoModel.from_pretrained(MODEL_NAME, output_attentions=True)
 model.eval()
 print("Model loaded successfully.")

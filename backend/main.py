@@ -17,7 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL_NAME = "bert-base-uncased"
+MODEL_NAME = "distilbert-base-uncased"
 print(f"Loading model {MODEL_NAME}...")
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModel.from_pretrained(MODEL_NAME, output_attentions=True)
